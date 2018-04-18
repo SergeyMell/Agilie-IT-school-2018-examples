@@ -1,0 +1,10 @@
+<div>
+  <button (click)="toggleDropdown()">
+    {{ dropdownTitle }}
+  </button>
+  <div [ngClass]="{hidden: !expanded}">
+    <div *ngFor="let value of values; index as i" [routerLink]="[value]">
+      {{value}}
+    </div>
+  </div>
+</div>
