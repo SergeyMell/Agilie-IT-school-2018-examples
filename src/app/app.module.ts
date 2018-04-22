@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ShotItemComponent } from './shot-item/shot-item.component';
+import {ShotsService} from './services/shots.service';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { ShotItemComponent } from './shot-item/shot-item.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ShotsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

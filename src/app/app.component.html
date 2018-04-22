@@ -1,5 +1,6 @@
-
-
 <div *ngFor="let shotItem of shots">
-  <app-shot-item [shot]="shotItem"></app-shot-item>
+  <app-shot-item [shot]="shotItem.shot"
+                 (click)="shotItem.customAction()">
+  </app-shot-item>
 </div>
+
