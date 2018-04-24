@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './routes.rb';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {routes} from './routes.rb';
     DropdownComponent,
     DashboardComponent,
     ProfileComponent,
-    SettingsComponent
+    SettingsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
