@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  posts: any;
+
+  constructor(http: HttpClient) {
+    http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => console.log(res));
+    http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => console.log(res));
+    http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => console.log(res));
+    http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => console.log(res));
+  }
 
   handleDropdownSelection(value) {
     this.title = value;

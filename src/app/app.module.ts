@@ -10,6 +10,9 @@ import { SettingsComponent } from './settings/settings.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './routes.rb';
 import { MenuComponent } from './menu/menu.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HeaderInterceptor} from './interceptors/header.interceptor';
+import {DubInterceptor} from './interceptors/dub.interceptor';
 
 
 @NgModule({
@@ -23,9 +26,13 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true
+    provide: HTTP_INTERCEPTORS, useClass: DubInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
