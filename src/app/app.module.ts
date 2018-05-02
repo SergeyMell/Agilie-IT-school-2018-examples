@@ -13,6 +13,7 @@ import {MenuComponent} from './menu/menu.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from './interceptors/header.interceptor';
 import {DubInterceptor} from './interceptors/dub.interceptor';
+import {MyPipe} from './pipes/some.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {DubInterceptor} from './interceptors/dub.interceptor';
     DashboardComponent,
     ProfileComponent,
     SettingsComponent,
-    MenuComponent
+    MenuComponent,
+    MyPipe
   ],
   imports: [
     BrowserModule,

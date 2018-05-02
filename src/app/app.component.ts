@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {MyPipe} from './pipes/some.pipe';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,10 @@ export class AppComponent {
 
   file: any;
 
-  constructor(private http: HttpClient) {
+  pipedText: '';
 
+  constructor(private http: HttpClient) {
+    this.pipedText = (new MyPipe).transform('Hello World');
   }
 
   downloadFile() {
