@@ -11,4 +11,9 @@
     {{posts | async | json}}
   </pre>
 
+  <button (click)="downloadFile()">Download Me</button>
+
+  <input type="file" (change)="getFile($event)">
+  <button (click)="sendFile()">Upload</button>
+
 </div>
