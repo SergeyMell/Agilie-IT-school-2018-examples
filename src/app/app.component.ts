@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MyPipe} from './pipes/some.pipe';
 
@@ -15,13 +15,15 @@ export class AppComponent {
 
   pipedText: '';
 
+  @ViewChild('downloadHelper') downloadHelper;
+
   constructor(private http: HttpClient) {
     this.pipedText = (new MyPipe).transform('Hello World');
   }
 
   downloadFile() {
     this.http.get('http://api.mobile.design/uploads/shots/239d30d434bb80223407f9e375a64e6790bd9234.?1505722325', {responseType: 'blob'}).subscribe(res => {
-      const link = document.createElement('a');
+      const link = this.downloadHelper.nativeElement;
       const url = window.URL.createObjectURL(res);
       link.href = url;
       link.download = 'my-file.jpg';
