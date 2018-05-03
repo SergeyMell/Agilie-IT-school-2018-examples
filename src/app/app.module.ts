@@ -14,6 +14,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from './interceptors/header.interceptor';
 import {DubInterceptor} from './interceptors/dub.interceptor';
 import {MyPipe} from './pipes/some.pipe';
+import {AuthComponent} from './auth-component/auth.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MyPipe} from './pipes/some.pipe';
     ProfileComponent,
     SettingsComponent,
     MenuComponent,
-    MyPipe
+    MyPipe,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
