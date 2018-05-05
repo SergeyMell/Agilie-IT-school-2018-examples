@@ -1,6 +1,7 @@
-import {Component, HostBinding, ViewChild} from '@angular/core';
+import {Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MyPipe} from './pipes/some.pipe';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,11 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
     this.pipedText = (new MyPipe).transform('Hello World');
+
+    const socket = io('https://soketer.herokuapp.com/');
+    socket.on('event', (data) => {
+      console.log(data);
+    });
   }
 
   downloadFile() {
