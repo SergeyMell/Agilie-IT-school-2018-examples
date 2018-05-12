@@ -2,8 +2,8 @@
   <button (click)="toggleDropdown()">
     {{ dropdownTitle }}
   </button>
-  <div [ngClass]="{hidden: !expanded}">
-    <div *ngFor="let value of values; index as i" [routerLink]="[value]">
+  <div [@dropdownToggling]="state">
+    <div *ngFor="let value of values; index as i" [routerLink]="[value]" class="dropdown-item">
       {{value}}
     </div>
   </div>

@@ -15,6 +15,7 @@ import {HeaderInterceptor} from './interceptors/header.interceptor';
 import {DubInterceptor} from './interceptors/dub.interceptor';
 import {MyPipe} from './pipes/some.pipe';
 import {AuthComponent} from './auth-component/auth.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {AuthComponent} from './auth-component/auth.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true},
