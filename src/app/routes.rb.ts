@@ -7,9 +7,9 @@ import {AuthComponent} from './auth-component/auth.component';
 
 export const routes: Routes = [
   {path: '', component: DashboardComponent},
+  {path: 'profile', component: ProfileComponent},
   {
     path: '', component: MenuComponent, children: [
-      {path: 'profile', component: ProfileComponent},
       {path: 'settings', component: SettingsComponent},
     ]
   },

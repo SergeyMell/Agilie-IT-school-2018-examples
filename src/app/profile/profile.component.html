@@ -1,3 +1,11 @@
 <p>
   profile works!
 </p>
+
+<ng-template #hello let-person="user" let-greeting>
+  <div>
+    {{greeting}} {{person}}
+  </div>
+</ng-template>
+
+<div *ngTemplateOutlet="hello; context: {user: 'Bill Gates', $implicit: 'Hi there, '}"></div>

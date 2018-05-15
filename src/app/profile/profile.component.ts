@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('hello') hello: TemplateRef<any>;
+
+  constructor(
+    private containerRef: ViewContainerRef
+  ) { }
 
   ngOnInit() {
+    this.containerRef.createEmbeddedView(this.hello, {user: 'Jimmy Page 1', $implicit: 'Good luck, '}, 5);
+    setTimeout(() => {
+      this.containerRef.remove(5);
+    }, 5000);
   }
 
 }
