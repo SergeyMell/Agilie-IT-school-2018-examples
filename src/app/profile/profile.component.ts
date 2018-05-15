@@ -9,6 +9,13 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild('hello') hello: TemplateRef<any>;
 
+  dataArray = ['Value 1', 'Value 2', 'Value 3'];
+  dataObject = {
+    key1: 'Value 1',
+    key2: 'Value 2',
+    key3: 'Value 3'
+  };
+
   constructor(
     private containerRef: ViewContainerRef
   ) { }
@@ -18,6 +25,24 @@ export class ProfileComponent implements OnInit {
     setTimeout(() => {
       this.containerRef.remove(5);
     }, 5000);
+  }
+
+  addToArray() {
+    this.dataArray.push(String(Math.random()));
+  }
+
+  changeArray() {
+    this.dataArray[0] = String(Math.random());
+  }
+
+  addToObject() {
+    console.log('adding');
+    this.dataObject[String(Math.random())] = String(Math.random());
+  }
+
+  changeObject() {
+    console.log('changing');
+    this.dataObject['key1'] = String(Math.random());
   }
 
 }

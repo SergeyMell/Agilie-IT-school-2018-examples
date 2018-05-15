@@ -9,3 +9,24 @@
 </ng-template>
 
 <div *ngTemplateOutlet="hello; context: {user: 'Bill Gates', $implicit: 'Hi there, '}"></div>
+
+<hr>
+<div>ngFor for Arrays</div>
+<button (click)="addToArray()">Add</button>
+<button (click)="changeArray()">Change</button>
+<div *ngFor="let val of dataArray">
+  {{val}}
+</div>
+<ng-template ngFor [ngForOf]="dataArray" let-val>
+  <div>
+    {{val}}
+  </div>
+</ng-template>
+
+<hr>
+<div>Directive for Objects</div>
+<button (click)="addToObject()">Add</button>
+<button (click)="changeObject()">Change</button>
+<div *appRepeater="let objValue from dataObject; key as i">
+  I am a {{objValue}} from key: {{i}}
+</div>

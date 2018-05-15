@@ -16,6 +16,7 @@ import {DubInterceptor} from './interceptors/dub.interceptor';
 import {MyPipe} from './pipes/some.pipe';
 import {AuthComponent} from './auth-component/auth.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RepeaterDirective} from './directives/repeater.directive';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SettingsComponent,
     MenuComponent,
     MyPipe,
-    AuthComponent
+    AuthComponent,
+    RepeaterDirective
   ],
   imports: [
     BrowserModule,
