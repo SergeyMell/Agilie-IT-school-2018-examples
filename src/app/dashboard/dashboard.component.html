@@ -1,3 +1,14 @@
-<p>
-  dashboard works!
-</p>
+<div>Example 1 (Simple):</div>
+<div *ngFor="let key of toArray(data)">
+  {{data[key]}}
+</div>
+
+<div>Example 2 (Iterable object):</div>
+<div *ngFor="let val of dataIterable">
+  {{val}}
+</div>
+
+<div>Example 3 (Prototyped object):</div>
+<div *ngFor="let val of data">
+  {{val}}
+</div>
