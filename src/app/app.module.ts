@@ -17,6 +17,7 @@ import {MyPipe} from './pipes/some.pipe';
 import {AuthComponent} from './auth-component/auth.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RepeaterDirective} from './directives/repeater.directive';
+import {AppmodelDirective} from './directives/appmodel.directive';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {RepeaterDirective} from './directives/repeater.directive';
     MenuComponent,
     MyPipe,
     AuthComponent,
-    RepeaterDirective
+    RepeaterDirective, AppmodelDirective
   ],
   imports: [
     BrowserModule,
