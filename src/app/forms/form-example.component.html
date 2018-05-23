@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" (ngSubmit)="register()">
+  <label for="login">Login</label>
+  <input id="login" type="text" formControlName="login"><br>
+
+  <label for="password">Password</label>
+  <input id="password" type="text" formControlName="password"><br>
+
+  <label for="passwordConfirmation">Confirmation</label>
+  <input id="passwordConfirmation" type="text"
+         formControlName="password_confirmation"><br>
+
+  <input type="submit" value="Register">
+</form>

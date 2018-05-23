@@ -17,6 +17,8 @@ import {MyPipe} from './pipes/some.pipe';
 import {AuthComponent} from './auth-component/auth.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RepeaterDirective} from './directives/repeater.directive';
+import {FormExampleComponent} from './forms/form-example.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -29,13 +31,14 @@ import {RepeaterDirective} from './directives/repeater.directive';
     MenuComponent,
     MyPipe,
     AuthComponent,
-    RepeaterDirective
+    RepeaterDirective, FormExampleComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true},
