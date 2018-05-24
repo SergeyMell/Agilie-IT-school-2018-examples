@@ -1,3 +1,15 @@
-<p>
-  settings works!
-</p>
+<form novalidate [formGroup]="myForm" (ngSubmit)="login()">
+
+  <label for="login">Login</label>
+  <input id="login" type="text" formControlName="login"> <br>
+
+  <div formGroupName="passGroup">
+    <label for="pass">Password</label>
+    <input id="pass" type="text" formControlName="password"> <br>
+
+    <label for="confirm">Confirm</label>
+    <input id="confirm" type="text" formControlName="passwordConfirmation"> <br>
+  </div>
+
+  <input type="submit" value="Register">
+</form>

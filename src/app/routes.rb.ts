@@ -8,9 +8,10 @@ import {AuthComponent} from './auth-component/auth.component';
 export const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'settings', component: SettingsComponent},
   {
     path: '', component: MenuComponent, children: [
-      {path: 'settings', component: SettingsComponent},
+
     ]
   },
   {path: 'dashboard', component: DashboardComponent},
